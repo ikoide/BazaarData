@@ -1,0 +1,7 @@
+* Items
+- Stock of Stonks: Chosen due to being the only finite item on the market
+- Enchanted Gold: Relatively high volume and higher price
+- Snowball: Chosen due to very high volume
+- Snow Block
+- Enchanted Snow Block
+- Summoning Eye: High price, constant supply
