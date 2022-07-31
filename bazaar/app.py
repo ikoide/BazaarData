@@ -22,10 +22,8 @@ def initialize_extensions(app):
     return None
 
 def register_blueprints(app):
-    from bazaar.main.views import main
     from bazaar.api.api import api
 
-    app.register_blueprint(main)
     app.register_blueprint(api)
 
     return None
