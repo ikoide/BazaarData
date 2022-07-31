@@ -23,10 +23,6 @@ def item(item_name):
     buyOrders = []
     datetimes = []
 
-    print(item)
-
-    print(limit, offset)
-
     for historicItem in item.history[offset:offset+limit]:
         sellPrice.append(historicItem.sellPrice)
         sellVolume.append(historicItem.sellVolume)
