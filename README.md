@@ -6,9 +6,9 @@ The aim of this project is to provide historical data for the items on the Hypix
 
 ### Parameters
 
-**Item Name: ** The name of an item listed on the Hypixel bazaar.
-**Limit: ** The the number of historic results you want for the query.
-**Offset: ** The value the query should be offset by from the first index.
+- **Item Name:** The name of an item listed on the Hypixel bazaar.
+- **Limit:** The the number of historic results you want for the query.
+- **Offset:** The value the query should be offset by from the first index.
 
 ### Example Request
 
