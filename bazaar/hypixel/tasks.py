@@ -30,4 +30,4 @@ def updateItems():
         item_db.history.append(itemHistoric)
         item_db.save()
 
-    print(f"Updated Items: {len(selected_items)}")
+    print(f"Updated Items: {len(products)}")

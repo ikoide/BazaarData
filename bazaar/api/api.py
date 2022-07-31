@@ -1,6 +1,6 @@
 import json
 
-from flask import Blueprint, Response
+from flask import Blueprint, Response, request
 
 from bazaar.hypixel.models import Item
 
@@ -9,6 +9,9 @@ api = Blueprint("api", __name__)
 @api.route("/api/v1/item/<string:item_name>")
 def item(item_name):
     item = Item.objects(name=item_name).first()
+
+    limit = int(request.args["limit"]) if "limit" in request.args else len(item.history)
+    offset = int(request.args["offset"]) if "offset" in request.args else 0
 
     sellPrice = []
     sellVolume = []
@@ -20,7 +23,11 @@ def item(item_name):
     buyOrders = []
     datetimes = []
 
-    for historicItem in item.history:
+    print(item)
+
+    print(limit, offset)
+
+    for historicItem in item.history[offset:offset+limit]:
         sellPrice.append(historicItem.sellPrice)
         sellVolume.append(historicItem.sellVolume)
         sellMovingWeek.append(historicItem.sellMovingWeek)
