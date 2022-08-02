@@ -16,7 +16,7 @@ def getData(item_name):
 def graphData(item_name, timeframe):
     json = getData(item_name)
     data = {}
-    data["dates"], data["prices"], data["volumes"] = json["datetimes"], json["sellPrice"], json["sellVolume"]
+    data["dates"], data["prices"], data["volumes"] = json["datetimes"], json["buyPrice"], json["buyVolume"]
     data = pd.DataFrame(genOHLC(timeframe, data))
     data.index = pd.to_datetime(data.index)
 
@@ -30,4 +30,4 @@ def browseItems():
 
 if __name__ == "__main__":
     #browseItems()
-    graphData("LOG", 5)
+    graphData("LOG:2", 5)

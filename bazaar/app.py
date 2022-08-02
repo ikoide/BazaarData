@@ -1,4 +1,5 @@
 import os
+import logging
 
 from flask import Flask
 
@@ -13,6 +14,7 @@ def create_app(config_filename="flask.cfg"):
 
     initialize_extensions(app)
     register_blueprints(app)
+    register_logger()
 
     return app
 
@@ -34,5 +36,15 @@ def register_scheduler(app):
     if not app.debug or os.environ.get("WERKZEUG_RUN_MAIN") == "true":
         scheduler.init_app(app)
         scheduler.start()
+
+    return None
+
+def register_logger():
+    logging.basicConfig(
+        level = logging.DEBUG,
+        format = "%(asctime)s %(levelname)s %(message)s"
+    )
+
+    logger = logging.getLogger(__name__)
 
     return None

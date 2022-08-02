@@ -2,6 +2,7 @@ import requests
 
 from datetime import datetime
 
+from bazaar.app import create_app
 from bazaar.extensions import scheduler
 from bazaar.hypixel.models import Item, ItemHistoric
 
@@ -33,4 +34,6 @@ def updateItems():
         item_db.history.append(itemHistoric)
         item_db.save()
 
-    print(f"Updated Items: {len(products)}")
+    app = create_app()
+    with app.app_context():
+        app.logger.info(f"Updated Items: {len(products)}")
