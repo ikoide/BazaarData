@@ -33,9 +33,9 @@ def register_blueprints(app):
 def register_scheduler(app):
     from bazaar.hypixel.tasks import updateItems
 
-    if not app.debug or os.environ.get("WERKZEUG_RUN_MAIN") == "true":
-        scheduler.init_app(app)
-        scheduler.start()
+    #if not app.debug or os.environ.get("WERKZEUG_RUN_MAIN") == "true":
+    scheduler.init_app(app)
+    scheduler.start()
 
     return None
 
