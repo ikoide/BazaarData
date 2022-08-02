@@ -20,11 +20,11 @@ def updateItems():
             item_db = Item(name=item["productId"])
 
         itemHistoric = ItemHistoric(
-            sellPrice = item["sellPrice"],
+            sellPrice = round(item["sellPrice"], 2),
             sellVolume = item["sellVolume"],
             sellMovingWeek = item["sellMovingWeek"],
             sellOrders = item["sellOrders"],
-            buyPrice = item["buyPrice"],
+            buyPrice = round(item["buyPrice"], 2),
             buyVolume = item["buyVolume"],
             buyMovingWeek = item["buyMovingWeek"],
             buyOrders = item["buyOrders"],
