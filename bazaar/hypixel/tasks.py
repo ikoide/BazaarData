@@ -1,5 +1,7 @@
 import requests
 
+from datetime import datetime
+
 from bazaar.extensions import scheduler
 from bazaar.hypixel.models import Item, ItemHistoric
 
@@ -24,7 +26,8 @@ def updateItems():
             buyPrice = item["buyPrice"],
             buyVolume = item["buyVolume"],
             buyMovingWeek = item["buyMovingWeek"],
-            buyOrders = item["buyOrders"]
+            buyOrders = item["buyOrders"],
+            datetime = datetime.utcnow()
         )
 
         item_db.history.append(itemHistoric)
